@@ -1,0 +1,5 @@
+docker pull osrf/ros:melodic-desktop-full-bionic
+
+docker run -it --rm --env="DISPLAY=$DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --runtime=nvidia slam:legoloam /bin/bash
+
+docker run -it --rm --env="DISPLAY=$DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/home/qi/GitPJ/SLAM/LeGOLOAM:/catkin_ws/src" --volume="/home/qi/GitPJ/SLAM/LeGOLOAM_Public_Dataset:/data" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --runtime=nvidia slam:legoloam /bin/bash
